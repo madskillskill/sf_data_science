@@ -21,3 +21,6 @@ There are two functions:
 * [**readme.md**](https://github.com/madskillskill/sf_data_science/blob/main/Project%20%231/README.md) is the very thing you are reading rn.
 ## Results
 It was actually funny to build this game and make it play with itself, using new tools. Git tech looks very useful not only for the code, but also for my writing works – these usually end up scattered around many devices and platform in many versions. Also, Jupyter looks neat.
+## Requirements
+* Python 3.10.4;
+* numpy module.
