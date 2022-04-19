@@ -5,7 +5,8 @@ import numpy as np
 
 number = np.random.randint(1,100) # Makes up a number
 
-count = 0 # Sets a counter for tries
+count = int(5.5) # Sets a counter for tries
+print(count)
 
 while True:
     count += 1
