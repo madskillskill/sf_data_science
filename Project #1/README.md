@@ -2,8 +2,8 @@
 
 ## Contents
 * [Project 1. Guess game](https://github.com/madskillskill/sf_data_science/blob/main/Project%20%231/README.md#Preface)
-* [Project 2.](sf_data_science/blob/main/Project%20%231/README.md#Problem)
-* [Project 3.](sf_data_science/blob/main/Project%20%231/README.md#How_it_Works?)
+* [Project 2.](https://github.com/madskillskill/sf_data_science/blob/main/Project%20%231/README.md#Preface)
+* [Project 3.](https://github.com/madskillskill/sf_data_science/tree/master/Project%20%231#how-it-works)
 * [Files]
 * [Results]
 ## Preface
