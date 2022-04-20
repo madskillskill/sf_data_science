@@ -24,7 +24,7 @@ def random_predict(number:int=1)->int:
     bottom_line = 1
     while True: # initiate guessing
         count += 1
-        if predict_number == number: 
+        if predict_number == number:
             break # exit cycle on guessing right
         if predict_number < number:
             bottom_line = predict_number # cut off numbers that are too low
