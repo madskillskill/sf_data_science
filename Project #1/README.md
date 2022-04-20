@@ -2,25 +2,16 @@
 
 ## Contents
 * [Preface](https://github.com/madskillskill/sf_data_science/blob/main/Project%20%231/README.md#Preface)
-* [Problem](https://github.com/madskillskill/sf_data_science/blob/main/Project%20%231/README.md#Preface)
-* [How it works?](https://github.com/madskillskill/sf_data_science/tree/main/Project%20%231#how-it-works)
 * [Files](https://github.com/madskillskill/sf_data_science/tree/main/Project%20%231#Files)
 * [Results](https://github.com/madskillskill/sf_data_science/tree/main/Project%20%231#Results)
 ## Preface
-I've started to use VS Code and Github while learning to code in Python. This little game shows how proficient I'm at it.
-## Problem
-The idea behind the **Guessing game** is to make the machine first make up and then guess a random number between 1 and 100.
-## How it works
-There are two functions:
-* **random_predict** makes up a number and blindly guesses it until winning, returns a number of guesses;
-* **guess_game** creates a randomized array of 1000 numbers then *random_predict*s them, returning the average number of results.
+I've started to use VS Code, Github and Jupyter while learning to code in Python. These little games show how proficient I'm at it.
 ## Files
-* [**game.py**](https://github.com/madskillskill/sf_data_science/blob/main/Project%20%231/game.py) is a prototype built for one round of game for a human user;
-* [**game_v2.py**](https://github.com/madskillskill/sf_data_science/blob/main/Project%20%231/game_v2.py) is a final product that makes the program play this game itself 1000 times;
-* [**game.ipynb**](https://github.com/madskillskill/sf_data_science/blob/main/Project%20%231/game.ipynb) is a presentation-ready showcase of a working code (note: it references respective files in the repository);
-* [**readme.md**](https://github.com/madskillskill/sf_data_science/blob/main/Project%20%231/README.md) is the very thing you are reading rn.
+* [**game.py**](https://github.com/madskillskill/sf_data_science/blob/main/Project%20%231/game.py) is a prototype of guessing game where a human user is invited to pick the right number in the least amount of tries. The games tips the player if they picked a number too small or too big;
+* [**game_v2.py**](https://github.com/madskillskill/sf_data_science/blob/main/Project%20%231/game_v2.py) is where the program itself plays this game 1000 times, but its' guesses are random and it doesn't adjust its' strategy in any way, so it need ~100 guesses on average;
+* [**game_v3.py**]() provides a modified guessing mechanism. It defines the range of possible answers first, and then picks the number right in the middle, so every step divides the amount of possible answers in two. At most, it needs only 7 tries to win, and the average result in 1000 games sits at lovely 4.9 guesses.
+* [**game.ipynb**](https://github.com/madskillskill/sf_data_science/blob/main/Project%20%231/game.ipynb) is a presentation-ready showcase of all three of them, but be warned – player's input doesn't work there well so the first game is better run as it's own file;
+* [**readme.md**](https://github.com/madskillskill/sf_data_science/blob/main/Project%20%231/README.md) is the very thing you are reading right now.
+* [**requirements.exe**]() makes sure you'd be able to run it as the time passes. I used Python 3.10.4 64-bit.
 ## Results
-It was actually funny to build this game and make it play with itself, using new tools. Git tech looks very useful not only for the code, but also for my writing works – these usually end up scattered around many devices and platform in many versions. Also, Jupyter looks neat.
-## Requirements
-* Python 3.10.4;
-* numpy module.
+It was fun to build this game and make it play with itself, making it more and more effective. Using new tools was great too: Git tech is very handy and Jupyter looks neat and easy to use.
