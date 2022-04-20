@@ -5,17 +5,18 @@ import numpy as np
 
 number = np.random.randint(1,100) # Makes up a number
 
-count = int(5.5) # Sets a counter for tries
-print(count)
-
+count = int() # Sets a counter for tries
+predict_number = int(input('Guess the number 1 to 100!  >'))
 while True:
     count += 1
-    predict_number = int(input('Guess the number 1 to 100!'))
+    print()
     if predict_number == number:
         break # Win!
     if predict_number <= number:
-        print('More')
+        print('It\'s bigger than that!')
+        predict_number = int(input('Guess once more!  >'))
     if predict_number >= number:
-        print('Less')
+        print('It\'s lesser than that!')
+        predict_number = int(input('Guess once more!  >'))
         
 print('Congratulations! You\'ve done it in',count,'tries!')

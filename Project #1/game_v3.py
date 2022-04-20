@@ -6,8 +6,11 @@ import numpy as np
 number = np.random.randint(1,100)
 
 def random_predict(number:int=1)->int:
-    """It makes up a number and guess it at random
-       using zero additional information.
+    """Guesses a number in a 1-100 range by knowing,
+       if previous guess higher or lower than needed.
+       It tracks highest and lowest possible answer,
+       and always go for the mean number between them,
+       e.g. (top+bottom)/2
 
     Args:
         number (int, optional): Made up number. Defaults to 1.
@@ -16,22 +19,19 @@ def random_predict(number:int=1)->int:
         int: A number of tries before the first right guess
     """
     count = 0
-    predict_number = 50
+    predict_number = 50 # setting the first guess strict
     top_line = 100
     bottom_line = 1
     while True: # initiate guessing
         count += 1
-        
-        
-        if predict_number == number:
+        if predict_number == number: 
             break # exit cycle on guessing right
         if predict_number < number:
-            bottom_line = predict_number
-            predict_number = int(np.mean(top_line+predict_number)/2)
+            bottom_line = predict_number # cut off numbers that are too low
+            predict_number = int((top_line+predict_number)/2) # makes mean prediction
         if predict_number > number:
-            top_line = predict_number
-            predict_number = int(np.mean(bottom_line+predict_number)/2)
-    print(f'Загаданным числом было {number}, Понадобилось {count}')
+            top_line = predict_number # cut off numbers that are too big
+            predict_number = int((bottom_line+predict_number)/2) # makes mean prediction
     return count
 
 def score_game(random_predict)->int:
@@ -46,24 +46,14 @@ def score_game(random_predict)->int:
     count_tries = []
     np.random.seed(1) # Fixes the seed
     
-    random_array = np.random.randint(1,100,size=(1000)) # Collects numbers to guess
+    random_array = np.random.randint(1,100,size=(1000)) # Collects the array numbers to guess
     for number in random_array:
         count_tries.append(random_predict(number))
         
-    # Applies random_guess to each element of array and gets back number of tries
+    # Applies random_predict to each element of the array and gets back number of tries
     
-    score = int(np.mean(count_tries)) # Gets the average number of tries
-    print(f'1, {count_tries.count(1)}')
-    print(f'2, {count_tries.count(2)}')
-    print(f'3, {count_tries.count(3)}')
-    print(f'4, {count_tries.count(4)}')
-    print(f'5, {count_tries.count(5)}')
-    print(f'6, {count_tries.count(6)}')
-    print(f'7, {count_tries.count(7)}')
-    print(f'8, {count_tries.count(8)}')
-    print('On average, guessing took', score, 'tries.')
+    score = int(np.mean(count_tries)) # Gets the mean number of tries
     return(score)
 
-#if __name__ == '__main__':
-#    score_game(random_predict)
-score_game(random_predict)
+if __name__ == '__main__':
+    print(score_game(random_predict)) # runs if executed directly
