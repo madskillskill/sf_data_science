@@ -3,7 +3,7 @@
 ## Контекст
 Я начал освоение профессии Data Science со [SkillFactory](https://skillfactory.ru/data-scientist) в феврале этого года. Это мой первый масштабный проект, который подразумевает самостоятельное перелопачивание, визуализацию и анализ данных.
 ## Ход
-Для работы мне был предоставлен дата-сет компании HeadHunter или HH.ru. Он располагается [здесь](http://tiny.cc/10hruz) и на моём [диске]().
+Для работы мне был предоставлен дата-сет компании HeadHunter или HH.ru. Он располагается [здесь](http://tiny.cc/10hruz) и на моём [диске](https://drive.google.com/file/d/1xRmOgvfEchLuXDLzebxUky96_FPPZ89u/view?usp=sharing).
 
 Результат выполнения всех задач находится в [ноутбуке](https://github.com/madskillskill/sf_data_science/blob/main/PROJECT-1/Project_1.ipynb). Там же все красивые графички. Всё открывается в браузере.
 ## Результат
