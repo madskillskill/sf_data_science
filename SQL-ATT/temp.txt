@@ -1,0 +1,5 @@
+select *
+from sqlprotest.movies as mv
+    join sqlprotest.movie_genres mg on mv.id = mg.movie_id
+    join sqlprotest.genres gen on gen.id = mg.genre_id
+where gen.name = 'Комедия' and rating > 7 and year > 2005
