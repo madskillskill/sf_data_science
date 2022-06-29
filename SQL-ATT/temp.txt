@@ -3,3 +3,83 @@ from sqlprotest.movies as mv
     join sqlprotest.movie_genres mg on mv.id = mg.movie_id
     join sqlprotest.genres gen on gen.id = mg.genre_id
 where gen.name = 'Комедия' and rating > 7 and year > 2005
+
+select
+    mv.id,
+    mv.name,
+    mv.year,
+    mv.rating
+from sqlprotest.movies as mv
+    join sqlprotest.movie_genres mg on mv.id = mg.movie_id
+    join sqlprotest.genres gen on gen.id = mg.genre_id
+where gen.id <> 5
+group by mv.id
+
+order by mv.name asc
+
+select
+    distinct mv.*
+from sqlprotest.movies as mv
+    join sqlprotest.movie_genres mg on mv.id = mg.movie_id
+    join sqlprotest.genres gen on gen.id = mg.genre_id
+group by mv.id, mg.id, gen.id
+
+except
+
+select
+    mv.*
+from sqlprotest.movies as mv
+    join sqlprotest.movie_genres mg on mv.id = mg.movie_id
+    join sqlprotest.genres gen on gen.id = mg.genre_id
+where gen.name like 'Криминал'
+
+order by 2 asc
+
+
+
+select
+    gen.name as genre_name,
+    avg(rating)
+from sqlprotest.movies as mv
+    join sqlprotest.movie_genres mg on mv.id = mg.movie_id
+    join sqlprotest.genres gen on gen.id = mg.genre_id
+group by mv.id, mg.id, gen.id
+
+except
+
+select
+    mv.*
+from sqlprotest.movies as mv
+    join sqlprotest.movie_genres mg on mv.id = mg.movie_id
+    join sqlprotest.genres gen on gen.id = mg.genre_id
+where rating is null
+
+order by year asc
+
+limit 3
+
+
+
+select
+    gen.name as genre_name,
+    avg(rating) as average_rating
+from sqlprotest.movies as mv
+    join sqlprotest.movie_genres mg on mv.id = mg.movie_id
+    join sqlprotest.genres gen on gen.id = mg.genre_id
+group by gen.name
+
+except
+
+select
+    gen.name as genre_name,
+    avg(rating) as average_rating
+from sqlprotest.movies as mv
+    join sqlprotest.movie_genres mg on mv.id = mg.movie_id
+    join sqlprotest.genres gen on gen.id = mg.genre_id
+where rating is null
+group by gen.name
+
+order by 2 desc
+
+
+
