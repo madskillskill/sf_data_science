@@ -1,3 +1,9 @@
+import statistics as stat
+from scipy.stats import ttest_ind
+import pandas as pd
+import numpy as np
+import seaborn as sns
+
 # Это мини-библиотека для сокращения
 # объёма ноутбука.
 
