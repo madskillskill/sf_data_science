@@ -1,7 +1,6 @@
 import pypandoc
- 
 import os
-
+import pandoc
 
 
 # if getattr(sys, 'frozen', False):
@@ -15,12 +14,13 @@ path = os.getcwd()
 
 print(path)
 
-# from pypandoc.pandoc_download import download_pandoc
-# # see the documentation how to customize the installation path
-# # but be aware that you then need to include it in the `PATH`
-# download_pandoc()
+from pypandoc.pandoc_download import download_pandoc
+# see the documentation how to customize the installation path
+# but be aware that you then need to include it in the `PATH`
+download_pandoc()
 
-import textwrap3
+
+# import textwrap3
 
 def converter(file):
     file = pypandoc.convert_file(file, 'plain', outputfile=(file[0:-5]+'.txt'), extra_args=['--wrap=auto']) 
