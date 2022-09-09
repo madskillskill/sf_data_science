@@ -1,7 +1,7 @@
 import pypandoc
- 
+import sys
 import os
-
+import pandoc
 
 
 # if getattr(sys, 'frozen', False):
@@ -11,21 +11,21 @@ import os
 #     path = sys._MEIPASS
 # else:
 #     path = os.path.dirname(os.path.abspath(__file__))
-path = os.getcwd()
+# path = os.getcwd()
+
+path='c:/word_converter'
 
 print(path)
 
-# from pypandoc.pandoc_download import download_pandoc
-# # see the documentation how to customize the installation path
-# # but be aware that you then need to include it in the `PATH`
-# download_pandoc()
+from pypandoc.pandoc_download import download_pandoc
+# see the documentation how to customize the installation path
+# but be aware that you then need to include it in the `PATH`
+download_pandoc()
 
-import textwrap3
+# import textwrap3
 
 def converter(file):
     file = pypandoc.convert_file(file, 'plain', outputfile=(file[0:-5]+'.txt'), extra_args=['--wrap=auto']) 
-
-
 
 
 file_list = os.listdir(path+'/')
