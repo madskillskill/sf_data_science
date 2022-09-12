@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 30,
+   "execution_count": 34,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -12,7 +12,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 31,
+   "execution_count": 35,
    "metadata": {},
    "outputs": [
     {
@@ -167,7 +167,7 @@
        "2  48.845377  2.325643  "
       ]
      },
-     "execution_count": 31,
+     "execution_count": 35,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -186,7 +186,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 32,
+   "execution_count": 36,
    "metadata": {},
    "outputs": [
     {
@@ -211,7 +211,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 33,
+   "execution_count": 37,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -228,7 +228,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 34,
+   "execution_count": 38,
    "metadata": {},
    "outputs": [
     {
@@ -268,7 +268,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 35,
+   "execution_count": 39,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -282,7 +282,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 36,
+   "execution_count": 40,
    "metadata": {},
    "outputs": [
     {
@@ -362,7 +362,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 37,
+   "execution_count": 41,
    "metadata": {},
    "outputs": [
     {
@@ -411,7 +411,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 38,
+   "execution_count": 42,
    "metadata": {},
    "outputs": [
     {
@@ -437,7 +437,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 39,
+   "execution_count": 43,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -458,16 +458,16 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 40,
+   "execution_count": 44,
    "metadata": {},
    "outputs": [
     {
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "C:\\Users\\admin\\AppData\\Local\\Temp\\ipykernel_2512\\4167505632.py:2: FutureWarning: The default dtype for empty Series will be 'object' instead of 'float64' in a future version. Specify a dtype explicitly to silence this warning.\n",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\ipykernel_8348\\4167505632.py:2: FutureWarning: The default dtype for empty Series will be 'object' instead of 'float64' in a future version. Specify a dtype explicitly to silence this warning.\n",
       "  night_counter = pd.Series().astype(int)\n",
-      "C:\\Users\\admin\\AppData\\Local\\Temp\\ipykernel_2512\\4167505632.py:8: SettingWithCopyWarning: \n",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\ipykernel_8348\\4167505632.py:8: SettingWithCopyWarning: \n",
       "A value is trying to be set on a copy of a slice from a DataFrame\n",
       "\n",
       "See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n",
@@ -496,7 +496,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 41,
+   "execution_count": 45,
    "metadata": {},
    "outputs": [
     {
@@ -517,7 +517,7 @@
        "Name: nights, dtype: int64"
       ]
      },
-     "execution_count": 41,
+     "execution_count": 45,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -530,7 +530,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 42,
+   "execution_count": 46,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -544,12 +544,25 @@
     "tag_list = ['children', 'young', 'without', 'king', 'premier', 'standard', 'superior', 'luxury', 'leisure trip', 'solo', 'view']\n",
     "\n",
     "for i in tag_list:\n",
-    "    hotels[i] = hotels['tags'].apply(tag_detect, tag = i)"
+    "    hotels[i] = hotels['tags'].apply(tag_detect, tag = i)\n",
+    "    \n",
+    "# all_tags = list()\n",
+    "\n",
+    "# for tag_list in hotels['tags_n']:\n",
+    "#     for i in tag_list:\n",
+    "#         i = i.split()\n",
+    "#         for k in i:\n",
+    "#             all_tags.append(k)\n",
+    "\n",
+    "# all_tags = pd.Series(all_tags)\n",
+    "\n",
+    "# pd.set_option(\"display.max_rows\", None)\n",
+    "# display(all_tags.value_counts())"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 43,
+   "execution_count": 47,
    "metadata": {},
    "outputs": [
     {
@@ -627,7 +640,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 44,
+   "execution_count": 48,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -652,7 +665,33 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 45,
+   "execution_count": 49,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# def citifier(string):\n",
+    "#     cut = string.split()[::-1]\n",
+    "\n",
+    "#     country = cut[1]\n",
+    "\n",
+    "#     country = country[0]\n",
+    "\n",
+    "#     if country == 'Kingdom':\n",
+    "#         city = cut[3:]\n",
+    "#     else: city = cut[2:]\n",
+    "    \n",
+    "#     city = city[0]\n",
+    "    \n",
+    "#     return city\n",
+    "\n",
+    "# hotels['hotel_city'] = hotels['hotel_address'].apply(citifier)\n",
+    "\n",
+    "# display(hotels['hotel_city'].value_counts())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 55,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -662,7 +701,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 46,
+   "execution_count": 56,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -674,15 +713,8 @@
    ]
   },
   {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "POS TAGS"
-   ]
-  },
-  {
    "cell_type": "code",
-   "execution_count": 47,
+   "execution_count": 57,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -691,7 +723,7 @@
     "            return True\n",
     "    else: return False\n",
     "        \n",
-    "tag_list = ['location', 'everything', 'great location', 'the location', 'good location', 'breakfast', 'friendly staff', 'staff', 'location staff', 'location was good', 'everything was perfect', 'comfy bed', 'perfect location', 'the staff', 'location is good', 'all', 'clean', 'very friendly staff', 'great breakfast']\n",
+    "tag_list = ['location', 'everything', 'nothing', 'great location', 'the location', 'good location']\n",
     "\n",
     "for i in tag_list:\n",
     "    hotels['positive_'+i] = hotels['positive_review'].apply(tag_detect, tag = i)"
@@ -699,7 +731,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 48,
+   "execution_count": 58,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -718,12 +750,151 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "NEG TAGS"
+    "Good location"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 49,
+   "execution_count": 181,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def rev_func(num_tags):\n",
+    "    res = num_tags.strip().split(' \\', \\' ')\n",
+    "    return res\n",
+    "\n",
+    "hotels['positive_review_n'] = hotels['positive_review'].apply(rev_func)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 182,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def tag_detect(tags_listed, tag):\n",
+    "    count = False\n",
+    "    if 'location' == tag:\n",
+    "            count = True\n",
+    "    return count\n",
+    "\n",
+    "for i in tag_list:\n",
+    "    hotels['good_location'] = hotels['positive_review_n'].apply(tag_detect, tag = i)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 193,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "KeyboardInterrupt",
+     "evalue": "",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+      "\u001b[1;32mc:\\SF\\sf_data_science\\PROJECT-3\\Project-3.ipynb Ячейка 31\u001b[0m in \u001b[0;36m<cell line: 1>\u001b[1;34m()\u001b[0m\n\u001b[0;32m      <a href='vscode-notebook-cell:/c%3A/SF/sf_data_science/PROJECT-3/Project-3.ipynb#Y103sZmlsZQ%3D%3D?line=0'>1</a>\u001b[0m \u001b[39mfor\u001b[39;00m i \u001b[39min\u001b[39;00m \u001b[39mrange\u001b[39m(\u001b[39mlen\u001b[39m(hotels\u001b[39m.\u001b[39mpositive_review_n)):\n\u001b[0;32m      <a href='vscode-notebook-cell:/c%3A/SF/sf_data_science/PROJECT-3/Project-3.ipynb#Y103sZmlsZQ%3D%3D?line=1'>2</a>\u001b[0m     \u001b[39mif\u001b[39;00m \u001b[39m'\u001b[39m\u001b[39mlocation\u001b[39m\u001b[39m'\u001b[39m \u001b[39min\u001b[39;00m  hotels\u001b[39m.\u001b[39mpositive_review_n[i]:\n\u001b[1;32m----> <a href='vscode-notebook-cell:/c%3A/SF/sf_data_science/PROJECT-3/Project-3.ipynb#Y103sZmlsZQ%3D%3D?line=2'>3</a>\u001b[0m         hotels\u001b[39m.\u001b[39;49mloc[:, (\u001b[39m'\u001b[39;49m\u001b[39mgood_location\u001b[39;49m\u001b[39m'\u001b[39;49m, i)] \u001b[39m=\u001b[39m \u001b[39mTrue\u001b[39;00m\n",
+      "File \u001b[1;32mc:\\Python\\Python39\\lib\\site-packages\\pandas\\core\\indexing.py:712\u001b[0m, in \u001b[0;36m_LocationIndexer.__setitem__\u001b[1;34m(self, key, value)\u001b[0m\n\u001b[0;32m    710\u001b[0m \u001b[39melse\u001b[39;00m:\n\u001b[0;32m    711\u001b[0m     key \u001b[39m=\u001b[39m com\u001b[39m.\u001b[39mapply_if_callable(key, \u001b[39mself\u001b[39m\u001b[39m.\u001b[39mobj)\n\u001b[1;32m--> 712\u001b[0m indexer \u001b[39m=\u001b[39m \u001b[39mself\u001b[39;49m\u001b[39m.\u001b[39;49m_get_setitem_indexer(key)\n\u001b[0;32m    713\u001b[0m \u001b[39mself\u001b[39m\u001b[39m.\u001b[39m_has_valid_setitem_indexer(key)\n\u001b[0;32m    715\u001b[0m iloc \u001b[39m=\u001b[39m \u001b[39mself\u001b[39m \u001b[39mif\u001b[39;00m \u001b[39mself\u001b[39m\u001b[39m.\u001b[39mname \u001b[39m==\u001b[39m \u001b[39m\"\u001b[39m\u001b[39miloc\u001b[39m\u001b[39m\"\u001b[39m \u001b[39melse\u001b[39;00m \u001b[39mself\u001b[39m\u001b[39m.\u001b[39mobj\u001b[39m.\u001b[39miloc\n",
+      "File \u001b[1;32mc:\\Python\\Python39\\lib\\site-packages\\pandas\\core\\indexing.py:643\u001b[0m, in \u001b[0;36m_LocationIndexer._get_setitem_indexer\u001b[1;34m(self, key)\u001b[0m\n\u001b[0;32m    639\u001b[0m \u001b[39m\"\"\"\u001b[39;00m\n\u001b[0;32m    640\u001b[0m \u001b[39mConvert a potentially-label-based key into a positional indexer.\u001b[39;00m\n\u001b[0;32m    641\u001b[0m \u001b[39m\"\"\"\u001b[39;00m\n\u001b[0;32m    642\u001b[0m \u001b[39mif\u001b[39;00m \u001b[39mself\u001b[39m\u001b[39m.\u001b[39mname \u001b[39m==\u001b[39m \u001b[39m\"\u001b[39m\u001b[39mloc\u001b[39m\u001b[39m\"\u001b[39m:\n\u001b[1;32m--> 643\u001b[0m     \u001b[39mself\u001b[39;49m\u001b[39m.\u001b[39;49m_ensure_listlike_indexer(key)\n\u001b[0;32m    645\u001b[0m \u001b[39mif\u001b[39;00m \u001b[39misinstance\u001b[39m(key, \u001b[39mtuple\u001b[39m):\n\u001b[0;32m    646\u001b[0m     \u001b[39mfor\u001b[39;00m x \u001b[39min\u001b[39;00m key:\n",
+      "File \u001b[1;32mc:\\Python\\Python39\\lib\\site-packages\\pandas\\core\\indexing.py:701\u001b[0m, in \u001b[0;36m_LocationIndexer._ensure_listlike_indexer\u001b[1;34m(self, key, axis, value)\u001b[0m\n\u001b[0;32m    691\u001b[0m \u001b[39mif\u001b[39;00m (\n\u001b[0;32m    692\u001b[0m     axis \u001b[39m==\u001b[39m column_axis\n\u001b[0;32m    693\u001b[0m     \u001b[39mand\u001b[39;00m \u001b[39mnot\u001b[39;00m \u001b[39misinstance\u001b[39m(\u001b[39mself\u001b[39m\u001b[39m.\u001b[39mobj\u001b[39m.\u001b[39mcolumns, MultiIndex)\n\u001b[1;32m   (...)\u001b[0m\n\u001b[0;32m    697\u001b[0m ):\n\u001b[0;32m    698\u001b[0m     \u001b[39m# GH#38148\u001b[39;00m\n\u001b[0;32m    699\u001b[0m     keys \u001b[39m=\u001b[39m \u001b[39mself\u001b[39m\u001b[39m.\u001b[39mobj\u001b[39m.\u001b[39mcolumns\u001b[39m.\u001b[39munion(key, sort\u001b[39m=\u001b[39m\u001b[39mFalse\u001b[39;00m)\n\u001b[1;32m--> 701\u001b[0m     \u001b[39mself\u001b[39m\u001b[39m.\u001b[39mobj\u001b[39m.\u001b[39m_mgr \u001b[39m=\u001b[39m \u001b[39mself\u001b[39;49m\u001b[39m.\u001b[39;49mobj\u001b[39m.\u001b[39;49m_mgr\u001b[39m.\u001b[39;49mreindex_axis(\n\u001b[0;32m    702\u001b[0m         keys, axis\u001b[39m=\u001b[39;49m\u001b[39m0\u001b[39;49m, consolidate\u001b[39m=\u001b[39;49m\u001b[39mFalse\u001b[39;49;00m, only_slice\u001b[39m=\u001b[39;49m\u001b[39mTrue\u001b[39;49;00m\n\u001b[0;32m    703\u001b[0m     )\n",
+      "File \u001b[1;32mc:\\Python\\Python39\\lib\\site-packages\\pandas\\core\\internals\\base.py:101\u001b[0m, in \u001b[0;36mDataManager.reindex_axis\u001b[1;34m(self, new_index, axis, fill_value, consolidate, only_slice)\u001b[0m\n\u001b[0;32m     96\u001b[0m \u001b[39m\"\"\"\u001b[39;00m\n\u001b[0;32m     97\u001b[0m \u001b[39mConform data manager to new index.\u001b[39;00m\n\u001b[0;32m     98\u001b[0m \u001b[39m\"\"\"\u001b[39;00m\n\u001b[0;32m     99\u001b[0m new_index, indexer \u001b[39m=\u001b[39m \u001b[39mself\u001b[39m\u001b[39m.\u001b[39maxes[axis]\u001b[39m.\u001b[39mreindex(new_index)\n\u001b[1;32m--> 101\u001b[0m \u001b[39mreturn\u001b[39;00m \u001b[39mself\u001b[39;49m\u001b[39m.\u001b[39;49mreindex_indexer(\n\u001b[0;32m    102\u001b[0m     new_index,\n\u001b[0;32m    103\u001b[0m     indexer,\n\u001b[0;32m    104\u001b[0m     axis\u001b[39m=\u001b[39;49maxis,\n\u001b[0;32m    105\u001b[0m     fill_value\u001b[39m=\u001b[39;49mfill_value,\n\u001b[0;32m    106\u001b[0m     copy\u001b[39m=\u001b[39;49m\u001b[39mFalse\u001b[39;49;00m,\n\u001b[0;32m    107\u001b[0m     consolidate\u001b[39m=\u001b[39;49mconsolidate,\n\u001b[0;32m    108\u001b[0m     only_slice\u001b[39m=\u001b[39;49monly_slice,\n\u001b[0;32m    109\u001b[0m )\n",
+      "File \u001b[1;32mc:\\Python\\Python39\\lib\\site-packages\\pandas\\core\\internals\\managers.py:685\u001b[0m, in \u001b[0;36mBaseBlockManager.reindex_indexer\u001b[1;34m(self, new_axis, indexer, axis, fill_value, allow_dups, copy, consolidate, only_slice, use_na_proxy)\u001b[0m\n\u001b[0;32m    682\u001b[0m     \u001b[39mraise\u001b[39;00m \u001b[39mIndexError\u001b[39;00m(\u001b[39m\"\u001b[39m\u001b[39mRequested axis not found in manager\u001b[39m\u001b[39m\"\u001b[39m)\n\u001b[0;32m    684\u001b[0m \u001b[39mif\u001b[39;00m axis \u001b[39m==\u001b[39m \u001b[39m0\u001b[39m:\n\u001b[1;32m--> 685\u001b[0m     new_blocks \u001b[39m=\u001b[39m \u001b[39mself\u001b[39;49m\u001b[39m.\u001b[39;49m_slice_take_blocks_ax0(\n\u001b[0;32m    686\u001b[0m         indexer,\n\u001b[0;32m    687\u001b[0m         fill_value\u001b[39m=\u001b[39;49mfill_value,\n\u001b[0;32m    688\u001b[0m         only_slice\u001b[39m=\u001b[39;49monly_slice,\n\u001b[0;32m    689\u001b[0m         use_na_proxy\u001b[39m=\u001b[39;49muse_na_proxy,\n\u001b[0;32m    690\u001b[0m     )\n\u001b[0;32m    691\u001b[0m \u001b[39melse\u001b[39;00m:\n\u001b[0;32m    692\u001b[0m     new_blocks \u001b[39m=\u001b[39m [\n\u001b[0;32m    693\u001b[0m         blk\u001b[39m.\u001b[39mtake_nd(\n\u001b[0;32m    694\u001b[0m             indexer,\n\u001b[1;32m   (...)\u001b[0m\n\u001b[0;32m    700\u001b[0m         \u001b[39mfor\u001b[39;00m blk \u001b[39min\u001b[39;00m \u001b[39mself\u001b[39m\u001b[39m.\u001b[39mblocks\n\u001b[0;32m    701\u001b[0m     ]\n",
+      "File \u001b[1;32mc:\\Python\\Python39\\lib\\site-packages\\pandas\\core\\internals\\managers.py:799\u001b[0m, in \u001b[0;36mBaseBlockManager._slice_take_blocks_ax0\u001b[1;34m(self, slice_or_indexer, fill_value, only_slice, use_na_proxy)\u001b[0m\n\u001b[0;32m    797\u001b[0m group \u001b[39m=\u001b[39m \u001b[39mnot\u001b[39;00m only_slice\n\u001b[0;32m    798\u001b[0m \u001b[39mfor\u001b[39;00m blkno, mgr_locs \u001b[39min\u001b[39;00m libinternals\u001b[39m.\u001b[39mget_blkno_placements(blknos, group\u001b[39m=\u001b[39mgroup):\n\u001b[1;32m--> 799\u001b[0m     \u001b[39mif\u001b[39;00m blkno \u001b[39m==\u001b[39;49m \u001b[39m-\u001b[39;49m\u001b[39m1\u001b[39;49m:\n\u001b[0;32m    800\u001b[0m         \u001b[39m# If we've got here, fill_value was not lib.no_default\u001b[39;00m\n\u001b[0;32m    802\u001b[0m         blocks\u001b[39m.\u001b[39mappend(\n\u001b[0;32m    803\u001b[0m             \u001b[39mself\u001b[39m\u001b[39m.\u001b[39m_make_na_block(\n\u001b[0;32m    804\u001b[0m                 placement\u001b[39m=\u001b[39mmgr_locs,\n\u001b[1;32m   (...)\u001b[0m\n\u001b[0;32m    807\u001b[0m             )\n\u001b[0;32m    808\u001b[0m         )\n\u001b[0;32m    809\u001b[0m     \u001b[39melse\u001b[39;00m:\n",
+      "\u001b[1;31mKeyboardInterrupt\u001b[0m: "
+     ]
+    }
+   ],
+   "source": [
+    "for i in range(len(hotels.positive_review_n)):\n",
+    "    if 'location' in  hotels.positive_review_n[i]:\n",
+    "        hotels.loc[:, ('good_location', i)] = True"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 195,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True    386803\n",
+       "Name: good_location, dtype: int64"
+      ]
+     },
+     "execution_count": 195,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "hotels['good_location'].value_counts()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 199,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 199,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "hotels['good_location'][0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 198,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['staff were amazing']"
+      ]
+     },
+     "execution_count": 198,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "hotels['positive_review_n'][0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 200,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "list"
+      ]
+     },
+     "execution_count": 200,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "type(hotels['positive_review_n'][1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -732,7 +903,7 @@
     "            return True\n",
     "    else: return False\n",
     "        \n",
-    "tag_list = ['small room', 'breakfast', 'location', 'everything', 'price', 'small rooms', 'very small room', 'expensive', 'room size', 'staff',  'the price']\n",
+    "tag_list = ['location', 'breakfast']\n",
     "\n",
     "for i in tag_list:\n",
     "    hotels['negative_'+i] = hotels['negative_review'].apply(tag_detect, tag = i)"
@@ -740,7 +911,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 50,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -749,10 +920,32 @@
     "            return True\n",
     "    else: return False\n",
     "        \n",
-    "tag_list = ['no negative', 'n a', 'none',  'nothing', '', 'nothing at all', 'nothing to dislike', 'no complaints', 'all good', 'nil', 'na', 'everything was perfect', 'absolutely nothing', 'can t think of anything', 'leaving', 'everything was great', 'nothing to complain about', 'no', 'nothing not to like', 'everything was good', 'nothing all good', 'having to leave', 'not much', 'i liked everything', 'liked everything', 'nothing everything was perfect', 'non']\n",
+    "tag_list = ['location', 'no negative', 'n a', 'none',  'nothing', '', 'nothing at all', 'nothing to dislike', 'no complaints', 'all good', 'nil', 'na']\n",
     "\n",
     "for i in tag_list:\n",
     "    hotels['no_negative'] = hotels['negative_review'].apply(tag_detect, tag = i)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Bad location"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def tag_detect(tags_listed, tag):\n",
+    "    if 'location' in str(tag):\n",
+    "            return True\n",
+    "    else: return False\n",
+    "\n",
+    "for i in tag_list:\n",
+    "    hotels['good_location'] = hotels['positive_review'].apply(tag_detect, tag = i)"
    ]
   },
   {
@@ -764,12 +957,48 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 51,
+   "execution_count": 52,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "additional_number_of_scoring                 -0.061773\n",
+       "average_score                                 0.363863\n",
+       "review_total_negative_word_counts            -0.383407\n",
+       "total_number_of_reviews                      -0.073389\n",
+       "review_total_positive_word_counts             0.220294\n",
+       "total_number_of_reviews_reviewer_has_given    0.002498\n",
+       "reviewer_score                                1.000000\n",
+       "days_since_review                             0.002408\n",
+       "lat                                          -0.036984\n",
+       "lng                                           0.034829\n",
+       "is_homeland                                   0.009279\n",
+       "nights                                       -0.014889\n",
+       "children                                     -0.014233\n",
+       "young                                        -0.020672\n",
+       "without                                      -0.056660\n",
+       "king                                          0.036716\n",
+       "premier                                       0.020603\n",
+       "standard                                     -0.060620\n",
+       "superior                                      0.040581\n",
+       "luxury                                        0.021354\n",
+       "leisure trip                                  0.117986\n",
+       "solo                                         -0.083230\n",
+       "view                                          0.031853\n",
+       "lat_diff                                      0.008052\n",
+       "lng_diff                                     -0.053375\n",
+       "good_location                                      NaN\n",
+       "dtype: float64"
+      ]
+     },
+     "execution_count": 52,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
    "source": [
-    "counts = hotels.corrwith(hotels['reviewer_score'])\n",
-    "counts.to_csv('corrwith.csv')"
+    "hotels.corrwith(hotels['reviewer_score'])"
    ]
   },
   {
@@ -781,36 +1010,34 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 23,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "hotels_copy = hotels.copy()\n",
-    "\n",
-    "object_columns = [s for s in hotels_copy.columns if hotels_copy[s].dtypes == 'object']\n",
-    "hotels_copy.drop(object_columns, axis = 1, inplace=True)\n",
-    "\n",
-    "\n",
-    "hotels_copy = hotels_copy.fillna(0)\n",
-    "\n",
-    "hotels_copy.drop(['lat', 'lng', 'days_since_review','lat_diff'], axis=1, inplace=True)"
-   ]
-  },
-  {
-   "cell_type": "code",
    "execution_count": 24,
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Разбиваем датафрейм на части, необходимые для обучения и тестирования модели  \n",
-    "# Х - данные с информацией об отелях, у - целевая переменная (рейтинги отелей)  \n",
-    "X = hotels_copy.drop(['reviewer_score'], axis = 1)  \n",
-    "y = hotels_copy['reviewer_score'] "
+    "object_columns = [s for s in hotels.columns if hotels[s].dtypes == 'object']\n",
+    "hotels.drop(object_columns, axis = 1, inplace=True)\n",
+    "\n",
+    "\n",
+    "hotels = hotels.fillna(0)\n",
+    "\n",
+    "hotels.drop(['lat', 'lng', 'days_since_review','lat_diff',], axis=1, inplace=True)"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": 25,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Разбиваем датафрейм на части, необходимые для обучения и тестирования модели  \n",
+    "# Х - данные с информацией об отелях, у - целевая переменная (рейтинги отелей)  \n",
+    "X = hotels.drop(['reviewer_score'], axis = 1)  \n",
+    "y = hotels['reviewer_score'] "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -820,7 +1047,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
+   "execution_count": 27,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -831,7 +1058,63 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 27,
+   "execution_count": 28,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "Int64Index: 96701 entries, 177225 to 152014\n",
+      "Data columns (total 33 columns):\n",
+      " #   Column                                      Non-Null Count  Dtype  \n",
+      "---  ------                                      --------------  -----  \n",
+      " 0   additional_number_of_scoring                96701 non-null  int64  \n",
+      " 1   average_score                               96701 non-null  int32  \n",
+      " 2   review_total_negative_word_counts           96701 non-null  int64  \n",
+      " 3   total_number_of_reviews                     96701 non-null  int64  \n",
+      " 4   review_total_positive_word_counts           96701 non-null  int64  \n",
+      " 5   total_number_of_reviews_reviewer_has_given  96701 non-null  int64  \n",
+      " 6   is_homeland                                 96701 non-null  bool   \n",
+      " 7   nights                                      96701 non-null  int64  \n",
+      " 8   children                                    96701 non-null  bool   \n",
+      " 9   young                                       96701 non-null  bool   \n",
+      " 10  without                                     96701 non-null  bool   \n",
+      " 11  king                                        96701 non-null  bool   \n",
+      " 12  premier                                     96701 non-null  bool   \n",
+      " 13  standard                                    96701 non-null  bool   \n",
+      " 14  superior                                    96701 non-null  bool   \n",
+      " 15  luxury                                      96701 non-null  bool   \n",
+      " 16  leisure trip                                96701 non-null  bool   \n",
+      " 17  solo                                        96701 non-null  bool   \n",
+      " 18  view                                        96701 non-null  bool   \n",
+      " 19  lng_diff                                    96701 non-null  float64\n",
+      " 20  positive_no positive                        96701 non-null  bool   \n",
+      " 21  positive_location                           96701 non-null  bool   \n",
+      " 22  positive_everything                         96701 non-null  bool   \n",
+      " 23  positive_nothing                            96701 non-null  bool   \n",
+      " 24  positive_great location                     96701 non-null  bool   \n",
+      " 25  positive_the location                       96701 non-null  bool   \n",
+      " 26  positive_good location                      96701 non-null  bool   \n",
+      " 27  negative_no negative                        96701 non-null  bool   \n",
+      " 28  negative_n a                                96701 non-null  bool   \n",
+      " 29  negative_none                               96701 non-null  bool   \n",
+      " 30  negative_location                           96701 non-null  bool   \n",
+      " 31  negative_everything                         96701 non-null  bool   \n",
+      " 32  negative_nothing                            96701 non-null  bool   \n",
+      "dtypes: bool(25), float64(1), int32(1), int64(6)\n",
+      "memory usage: 8.6 MB\n"
+     ]
+    }
+   ],
+   "source": [
+    "X_test.info()\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -884,99 +1167,22 @@
    ]
   },
   {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "MAPE: 0.12898256869048297\n",
-    "\n",
-    "Index(['additional_number_of_scoring', 'average_score',\n",
-    "       'review_total_negative_word_counts', 'total_number_of_reviews',\n",
-    "       'review_total_positive_word_counts',\n",
-    "       'total_number_of_reviews_reviewer_has_given', 'is_homeland', 'nights',\n",
-    "       'children', 'young', 'without', 'king', 'premier', 'standard',\n",
-    "       'superior', 'luxury', 'leisure trip', 'solo', 'view', 'lng_diff',\n",
-    "       'positive_location', 'positive_everything', 'positive_great location',\n",
-    "       'positive_the location', 'positive_good location', 'positive_breakfast',\n",
-    "       'positive_friendly staff', 'positive_excelent location',\n",
-    "       'positive_staff', 'positive_location and staff',\n",
-    "       'positive_location staff', 'positive_location location location',\n",
-    "       'positive_location was good', 'positive_location was great',\n",
-    "       'positive_everything was perfect', 'positive_comfy bed',\n",
-    "       'positive_good breakfast', 'positive_perfect location',\n",
-    "       'positive_the staff', 'positive_location is great',\n",
-    "       'positive_location is good', 'positive_all', 'positive_clean',\n",
-    "       'positive_very friendly staff', 'positive_great breakfast',\n",
-    "       'no_positive', 'negative_small room', 'negative_breakfast',\n",
-    "       'negative_location', 'negative_everything', 'negative_price',\n",
-    "       'negative_small rooms', 'negative_very small room',\n",
-    "       'negative_expensive', 'negative_room size', 'negative_staff',\n",
-    "       'negative_expensive breakfast', 'negative_the price', 'no_negative'],\n",
-    "      dtype='object') 59"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "MAPE: 0.1289515372089229\n",
-    "Index(['additional_number_of_scoring', 'average_score',\n",
-    "       'review_total_negative_word_counts', 'total_number_of_reviews',\n",
-    "       'review_total_positive_word_counts',\n",
-    "       'total_number_of_reviews_reviewer_has_given', 'is_homeland', 'nights',\n",
-    "       'children', 'young', 'without', 'king', 'premier', 'standard',\n",
-    "       'superior', 'luxury', 'leisure trip', 'solo', 'view', 'lng_diff',\n",
-    "       'positive_location', 'positive_everything', 'positive_great location',\n",
-    "       'positive_the location', 'positive_good location', 'positive_breakfast',\n",
-    "       'positive_friendly staff', 'positive_staff', 'positive_location staff',\n",
-    "       'positive_location was good', 'positive_everything was perfect',\n",
-    "       'positive_comfy bed', 'positive_perfect location', 'positive_the staff',\n",
-    "       'positive_location is good', 'positive_all', 'positive_clean',\n",
-    "       'positive_very friendly staff', 'positive_great breakfast',\n",
-    "       'no_positive', 'negative_small room', 'negative_breakfast',\n",
-    "       'negative_location', 'negative_everything', 'negative_price',\n",
-    "       'negative_small rooms', 'negative_very small room',\n",
-    "       'negative_expensive', 'negative_room size', 'negative_staff',\n",
-    "       'negative_the price', 'no_negative'],\n",
-    "      dtype='object') 52"
-   ]
-  },
-  {
    "cell_type": "code",
-   "execution_count": 28,
+   "execution_count": 30,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "MAPE: 0.12999330750981625\n",
-      "Index(['additional_number_of_scoring', 'average_score',\n",
-      "       'review_total_negative_word_counts', 'total_number_of_reviews',\n",
-      "       'review_total_positive_word_counts', 'nights', 'children', 'young',\n",
-      "       'without', 'king', 'premier', 'standard', 'superior', 'luxury',\n",
-      "       'leisure trip', 'solo', 'view', 'lng_diff', 'positive_location',\n",
-      "       'positive_everything', 'positive_great location',\n",
-      "       'positive_the location', 'positive_good location', 'positive_breakfast',\n",
-      "       'positive_friendly staff', 'positive_staff', 'positive_location staff',\n",
-      "       'positive_location was good', 'positive_everything was perfect',\n",
-      "       'positive_comfy bed', 'positive_perfect location', 'positive_the staff',\n",
-      "       'positive_location is good', 'positive_all', 'positive_clean',\n",
-      "       'positive_very friendly staff', 'positive_great breakfast',\n",
-      "       'no_positive', 'negative_small room', 'negative_breakfast',\n",
-      "       'negative_location', 'negative_everything', 'negative_price',\n",
-      "       'negative_small rooms', 'negative_very small room',\n",
-      "       'negative_expensive', 'negative_room size', 'negative_staff',\n",
-      "       'negative_the price', 'no_negative'],\n",
-      "      dtype='object') 50\n"
+      "MAPE: 0.13150680506034415\n"
      ]
     }
    ],
    "source": [
     "# Сравниваем предсказанные значения (y_pred) с реальными (y_test), и смотрим насколько они отличаются  \n",
     "# Метрика называется Mean Absolute Percentage Error (MAPE) и показывает среднюю абсолютную процентную ошибку предсказанных значений от фактических.  \n",
-    "print('MAPE:', metrics.mean_absolute_percentage_error(y_test, y_pred))\n",
-    "\n",
-    "print(X_test.columns, len(X_test.columns))"
+    "print('MAPE:', metrics.mean_absolute_percentage_error(y_test, y_pred))"
    ]
   },
   {
@@ -988,7 +1194,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 29,
+   "execution_count": 31,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1004,7 +1210,7 @@
  ],
  "metadata": {
   "kernelspec": {
-   "display_name": "Python 3.8.2 64-bit",
+   "display_name": "Python 3.9.13 64-bit",
    "language": "python",
    "name": "python3"
   },
@@ -1018,11 +1224,11 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.8.2"
+   "version": "3.9.13"
   },
   "vscode": {
    "interpreter": {
-    "hash": "570feb405e2e27c949193ac68f46852414290d515b0ba6e5d90d076ed2284471"
+    "hash": "25034407fed5d681614dac11a1c0537e8cb49e3a8883c071303eea01322943d9"
    }
   }
  },
