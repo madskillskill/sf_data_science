@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "SF",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"jupyter.jupyterServerType": "local"
+	}
+}
