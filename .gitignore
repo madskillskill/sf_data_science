@@ -1,10 +1,9 @@
 PROJECT-1/data/dst-3.0_16_1_hh_database.csv
 PROJECT-1/Project_1.ipynb
-EDA-1/data/wine.csv
-EDA-2/data/wine_cleared.csv
-EDA-2/wine.ipynb
-EDA-3/data/wine_cleared.csv
-PROJECT-3/data/hotels.csv
-PROJECT-3/data/Hotel_Reviews.csv
-PROJECT-3/data/cities500.txt
-PROJECT-3/corrwith.csv
+EDA-1 Введение в разведывательный анализа данных. Алкгоритмы и методы EDA/data/wine.csv
+EDA-2. Математическая статистика в контексте EDA/data/wine_cleared.csv
+EDA-3. Проектирование признаков/data/wine_cleared.csv
+EDA-PROJECT-3 + Kaggle/data/hotels.csv
+EDA-PROJECT-3 + Kaggle/data/Hotel_Reviews.csv
+EDA-PROJECT-3 + Kaggle/data/cities500.txt
+EDA-PROJECT-3 + Kaggle/corrwith.csv
