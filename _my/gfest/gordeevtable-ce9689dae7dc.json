@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "gordeevtable",
+  "private_key_id": "ce9689dae7dc2d99f27baa74adb9ae1a81430444",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDTsj4cVzzyD/y3\n4GCBvaOo2VhQAkpDRCLVCTv5IPp2Evo1VMfe3hKJwg9UYk59Rm33HGpeHoRaCN7V\nUXKWv6/8BkLMbKZCY0RtnoAyOCCLIdpRfMLZ3jgA7BUNezQb9n6NCc2Fz3tRKE3A\n0f1Y8Vhcbin5FYrEE1xcbCv/ccyw8HdRevgcfZq5EFHphq2DB/yaly0C5siINhlo\nPJhtgBznY9i829dUWVx5Evu+fp48OldSJc7UEfpWRTDwFJ7c8U5Yp2QuuN1EcE9g\ncmH6kPZpp++/wVnAJgR+7zwp4HolEsL4cDFaDlZZvQC5uAU3ZVfuc7t30th1+Yeg\nsjlw5H6xAgMBAAECggEAHs9+r1yZt9f7KGlAAoIESMs2nuZxF9svKqGzwy2OkRLF\nVxpmFe9s8/R04LYyGuozj6yTZUFnHTzUmb1x7QjXEdojbLc/d21qhH3LcK5Z5jC2\nIqKthUy3X+2m9BWuCYfVoVdU50MW/UKIFnvkNfFiXTQsvbOUmmGq+/SZGWOJrr1S\nFvOAuWEKR5KYMkpaQvtEMylu/Hh4CTRL4BRiwt32ysuoQj7ePRkTK3RgyPjrRrSD\nax1yP443ekukRjOTwE72Ltfp45lJmhb0HwEcELvTqfzRqarRMqgfsMH0PRMYck8/\nbMkuGVboPZel5ULVZM0vEKmScB/oB8eYCoXibc4fVQKBgQD/gARE83PCOtGAE4Sm\n978bGU7+MV6gWX12w70MbRTh3Pg8nnaoZMVO+3MIayDjAC509reUKbseeoguC2Dj\n0ZNbbnUfMsAWJFg26Kw+Xg8IZhIdsi0C0imLeokw280GgE2FwCUSzfoJb6JYQTeR\nBpeeKuJAlmkxi8N8WI/dONuhVwKBgQDUHEi3IHA6XiPqTGOmuoQnkgDr0mDlTKNL\nzt6/1H2dl135YM9BmU8kAyuWdkYY7k7oMPKt3hlw8dCSFYIo/4nl6Xysr4U68ZgM\ntqbXxvzcIp26wvaAq2hiIGtQTGu/SsdAEF4UajeYnTRJBkOZ36BzozgTjJ5sIwWI\nZLhGjyOzNwKBgCtvEsq57DLXlufD6agMs8MikUgrEmAF9osrCUdEf+lJjDWZ5qgH\nwXcEzfBfbc7JKBygGGMqmPG8eMwDCSyRYxCG/YgZM4hQE2L6ONW9Xaba2zeLI5W4\nLnHUmd/hbcAuLX+QQ30n4NqbzKheJdkUms+7kIzURPu0O742u/YqhUOvAoGAdDQK\nokjjMxbgFjxDW9RTElqqpodbDkQuMhnjbrS7HNsQYM7ovMeA0/nop0WkoYPtNsea\nLCbBSV8xJNcjt9JHee2wn+qI0wIIiu6F+TDK1s8gGnE1GsjNJvUb1aIIZYRSJIbT\nA9wtGS8Gtfr4jhQ1kySYVB11rUiCf3auffltVYECgYEA0e1pLbvoIsA0DLrwyda9\neG3639vgE7OjbZLTTBEBuRu2vUBsdACbUPJ8Oejs8c45glASiF3Gjjx740k7fM2v\nUb8+0Py0DY+yvZhEE1OE6qXEfvsCK87lIDkLC4CX0ir0wvwOmrek38xBDGkrt2/u\nobeD0s7vvIm74c5bfT0+mMU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "gfest-bot@gordeevtable.iam.gserviceaccount.com",
+  "client_id": "112699412821213388697",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gfest-bot%40gordeevtable.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
